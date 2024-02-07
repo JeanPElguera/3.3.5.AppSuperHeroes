@@ -58,7 +58,7 @@ fun HeroListItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(dimensionResource(R.dimen.paddingMedium))
-                .sizeIn(minHeight = dimensionResource(R.dimen.sizeMedium))
+
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
