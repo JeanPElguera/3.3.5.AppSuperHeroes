@@ -31,15 +31,14 @@ import com.example.appsuperheroes.model.Hero
 import com.example.appsuperheroes.ui.theme.SuperheroesTheme
 
 @Composable
-fun HeroesList(heroes: List<Hero>, modifier: Modifier = Modifier, contentPadding: PaddingValues = PaddingValues(4.dp)) {
-
+fun HeroesList(heroes: List<Hero>, contentPadding: PaddingValues = PaddingValues(dimensionResource(R.dimen.paddingValues))) {
     LazyColumn(contentPadding = contentPadding) {
         items(heroes) {  hero ->
             HeroListItem(
                 hero = hero,
                 modifier = Modifier
-                    .padding(horizontal = (dimensionResource(id = R.dimen.paddingMedium)),
-                        vertical = (dimensionResource(id = R.dimen.paddingSmall)))
+                    .padding(horizontal = (dimensionResource(R.dimen.paddingMedium)),
+                        vertical = (dimensionResource(R.dimen.paddingSmall)))
             )
         }
     }
@@ -53,13 +52,13 @@ fun HeroListItem(
 ) {
     Card(
         modifier = modifier,
-        elevation = CardDefaults.cardElevation(dimensionResource(id = R.dimen.cardElevation)),
+        elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.cardElevation)),
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(dimensionResource(id = R.dimen.paddingMedium))
-                .sizeIn(minHeight = dimensionResource(id = R.dimen.sizeMedium))
+                .padding(dimensionResource(R.dimen.paddingMedium))
+                .sizeIn(minHeight = dimensionResource(R.dimen.sizeMedium))
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -71,12 +70,12 @@ fun HeroListItem(
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
-            Spacer(Modifier.width(dimensionResource(id = R.dimen.paddingMedium)))
+            Spacer(Modifier.width(dimensionResource(R.dimen.paddingMedium)))
 
                 Image(
                     modifier = Modifier
-                        .size(dimensionResource(id = R.dimen.sizeMedium))
-                        .clip(RoundedCornerShape(dimensionResource(id = R.dimen.paddingSmall))),
+                        .size(dimensionResource(R.dimen.sizeMedium))
+                        .clip(RoundedCornerShape(dimensionResource(R.dimen.paddingSmall))),
                     painter = painterResource(hero.imageRes),
                     contentDescription = null,
                     alignment = Alignment.TopCenter,
